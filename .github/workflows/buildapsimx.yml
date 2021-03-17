@@ -28,12 +28,13 @@ jobs:
         with:
             repository: APSIMInitiative/ApsimX
             path: ApismX
+            fetch-depth: 1
       - name: Checkout ApsimShared
         uses: actions/checkout@v2
         with:
             repository: APSIMInitiative/APSIM.Shared
             path: APSIM.Shared
-
+            fetch-depth: 1
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: echo Hello, world!
