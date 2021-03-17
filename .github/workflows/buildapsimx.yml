@@ -26,12 +26,12 @@ jobs:
       - name: Checkout apsimx
         uses: actions/checkout@v2
         with:
-            repository: /APSIMInitiative/ApsimX
+            repository: APSIMInitiative/ApsimX
             path: ApismX
       - name: Checkout ApsimShared
         uses: actions/checkout@v2
         with:
-            repository: /APSIMInitiative/APSIM.Shared
+            repository: APSIMInitiative/APSIM.Shared
             path: APSIM.Shared
 
       # Runs a single command using the runners shell
