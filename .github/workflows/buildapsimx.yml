@@ -41,8 +41,15 @@ jobs:
         uses: nuget/setup-nuget@v1
         with:
             nuget-version: '5.x'
-      - name: Check
-        run: ls
+      
       - name: Restore nuget
         run: nuget restore ApsimX.sln
+        working-directory: ApsimX
+        
+      - name: Build ApsimX
+        run: msbuild ApsimX.sln
+        working-directory: ApsimX
+        
+      - name: Check
+        run: ls
         working-directory: ApsimX
