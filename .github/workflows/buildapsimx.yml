@@ -35,14 +35,7 @@ jobs:
             repository: APSIMInitiative/APSIM.Shared
             path: APSIM.Shared
             fetch-depth: 1
-
-      - name: Setup NuGet
-        uses: NuGet/setup-nuget@v1.0.2
-      
-      - name: Restore NuGet Packages
-        run: nuget restore ApsimX.sln
-        working-directory: ./ApsimX
-        
-      - name: Build ApsimX
-        run: msbuild ApsimX.sln
+      - name: Add msbuild to PATH
+        uses: microsoft/setup-msbuild@v1.0.2
+     
  
