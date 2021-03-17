@@ -27,7 +27,7 @@ jobs:
         uses: actions/checkout@v2
         with:
             repository: APSIMInitiative/ApsimX
-            path: ApismX
+            path: ApsimX
             fetch-depth: 1
       - name: Checkout ApsimShared
         uses: actions/checkout@v2
