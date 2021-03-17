@@ -35,12 +35,17 @@ jobs:
             repository: APSIMInitiative/APSIM.Shared
             path: APSIM.Shared
             fetch-depth: 1
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
 
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+      - name: Setup MSBuild Path
+        uses: warrenbuckley/Setup-MSBuild@v1    
+        
+      - name: Setup NuGet
+        uses: NuGet/setup-nuget@v1.0.2
+      
+      - name: Restore NuGet Packages
+        run: nuget restore ApsimX.sln
+        working-directory: ./ApsimX
+        
+      - name: Build ApsimX
+        run: msbuild ApsimX.sln
+ 
